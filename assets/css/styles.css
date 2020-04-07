@@ -1,0 +1,240 @@
+
+body{
+    display: grid;
+    grid-template-areas: "header header header header"
+                         "nav main main main";
+    grid-template-columns:250px 1fr 1fr 300px;
+    background-color: #F8F7FF;
+    font-family: sans-serif;
+}
+h1, h2{
+    padding: 0;
+    margin: 0;
+}
+p{
+    text-indent: 2rem;
+    color: #22181C;
+}
+header, main, nav, aside, footer{
+    padding: 1rem;
+    
+}
+
+header{
+    grid-area: header;
+    text-align: center;
+    background-color: #23B5D3;
+    border-bottom: solid 1px #F8F7FF;
+    color: #D5F2E3;
+    font-family: serif;
+}
+#logo{
+    float: right;
+    border-radius: 50%;
+}
+
+h1{
+    font-size: 300%;
+}
+
+h2{
+    font-size: 200%;
+}
+
+h3{
+    font-size: 120%;
+}
+
+h2, h3{
+    color: #BA2D00;
+}
+
+nav{
+    grid-area: nav;
+    display: flex;
+    padding-top: 0;
+    flex-direction: column;
+    padding-left: 0;
+    padding-right: 0;
+    background-color: #23B5D3;
+    text-align: center;
+}
+
+nav a{
+    
+    text-decoration: none;
+    color: #22181C;
+    padding-bottom: 2rem;
+    border-bottom: solid 1px #F8F7FF;
+   
+}
+
+nav a:hover {
+    background-color: aqua;
+}
+
+nav .buttonNav{
+    border-bottom: solid 1px #F8F7FF;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+button{
+    border-radius: 50%
+}
+
+.under{
+   position: absolute;
+    z-index: 1;
+}
+
+.over{
+    position: relative;
+    z-index: 2;
+}
+
+.over:hover{
+    z-index: 0;
+}
+.under:hover{
+    z-index: 3;
+}
+.current, .currentLast{
+    background-color: #BA2D00; 
+}
+
+.current:hover, .currentLast:hover{
+    background-color: #BA2D00;
+}
+
+main{
+    grid-area: main
+}
+
+#intro{
+    display: grid;
+    grid-template-areas: "heading heading heading"
+                         "paragraph paragraph picture";
+    grid-template-columns: 1fr 1fr 2fr;
+    
+}
+
+h2{
+    grid-area: heading;
+}
+
+p{
+    grid-area: paragraph;
+}
+
+.images{
+    grid-area: picture;
+    
+}
+
+video{
+    grid-area: video;
+    padding: 1rem;
+}
+
+#intro img{
+    border: 3px solid #22181C;
+}
+
+#price{
+    display: grid;
+    grid-template-areas: "heading heading"
+                         "paragraph video";
+    grid-template-columns: 1fr 1fr;
+}
+
+ol a{
+    color: #23B5D3;
+}
+
+ol a:hover{
+    color: aqua;
+}
+
+footer{
+    grid-area: footer;
+}
+
+@media only screen and (max-width: 1000px){
+    body{
+        grid-template-areas: "header header header"
+                            "nav nav nav"
+                            "main main main";
+        grid-template-columns:1fr 1fr 33%;
+    }
+    nav{
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0;
+    }
+    nav a{
+        width: 20%;
+        text-align: center;
+        padding-right: 1rem;
+        padding-bottom: 0;
+        border-right: 1px solid #F8F7FF;
+    }
+    .buttonNav{
+        visibility: collapse;
+        width: 0;
+        height: 0;
+    }
+    .last, .currentLast{
+        border-right: none;
+    }
+
+
+}
+
+@media only screen and (max-width: 800px){
+    body{
+        grid-template-areas: "header"
+                            "nav"
+                            "main";
+        grid-template-columns:1fr;
+    }
+    #logo{
+        visibility: collapse;
+    }
+    nav{
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    nav a{
+        width: 100%;
+        padding-bottom: 1rem;
+        text-align: center;
+        border-bottom: solid 1px #F8F7FF;
+        padding-right: 0;
+        border-right: 0;
+    }
+    #intro{
+        grid-template-areas: "heading"
+                             "paragraph"
+                             "picture";
+        grid-template-columns: 1fr;
+    }
+    
+    #price{
+        grid-template-areas: "heading"
+                             "paragraph"
+                             "video";
+        grid-template-columns: 1fr;
+    }
+    header{
+        border: none;
+    }
+    #top{
+        border-top: solid 1px #F8F7FF;
+    }
+    
+
+}
